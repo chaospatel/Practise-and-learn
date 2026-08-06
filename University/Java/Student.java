@@ -7,11 +7,12 @@ class Student{
         Student student2=new Student();
         Student student3=new Student();
 
-        student2.roll=102
-        student2.name="Anjali;
+        student2.roll=102;
+        student2.name="Anjali";
         student2.department="Computer Science"; 
         System.out.println("---Student  Details---");
         System.out.println(student2.roll);
         System.out.println(student2.name);
         System.out.println(student2.department);
+    }
 }
