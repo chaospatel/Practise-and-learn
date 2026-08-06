@@ -23,6 +23,5 @@ class Family{
         brother.age=18;
         brother.name="David";
         brother.bloodgroup="AB+";
-
     }
 }
