@@ -1,16 +1,28 @@
 public class Vehicle {
-    public void display(){
-        System.out.println("Vehicle Class-I am a basse class");
+    String brand;
+    int speed;
+    public void displayVehicle(){
+        System.out.println("Main Class displayVehicle");
+    }
+    public void startEngine(){
+        System.out.println("Main Class startVehicle");
     }
     public static void main(String[] args) {
         Vehicle a=new Vehicle();
         car c=new car();
-        a.display();
-        c.show();  
+        a.displayVehicle();
+        a.startEngine();
+        c.displayCar();
+        c.horn();
     }
 }
 class car extends Vehicle{
-        public void show(){
-            System.out.println("Car class-I am a sub class");
+    String model;
+    int price;
+        public void displayCar(){
+            System.out.println("Sub-Main Class displayCar");
+        }
+        public void horn(){
+            System.out.println("Sub-Main Class horn");
         }
     }
