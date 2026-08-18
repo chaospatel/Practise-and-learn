@@ -8,7 +8,7 @@ int main(){
                 cout<<'*';
             }
             else{
-                cout<<" ";
+                cout<<endl;
             }
         }
     }

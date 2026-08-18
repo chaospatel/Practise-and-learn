@@ -8,8 +8,10 @@ int main(){
     cin>>v;
     arr2[r][c]=v;
     for (int i=0;i<5;i++){
-        for (int j=0;j<5;j++)
+        for (int j=0;j<5;j++){
         cout<<arr2[i][j]<<" ";
     }
+    cout<<"\n";}
     return 0;
+
 }
