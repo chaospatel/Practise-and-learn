@@ -1,5 +1,5 @@
-class ABC{
-public static void main(String [] dhyey){
 
-}
-}
+public static void main(String [] dhyey){
+3
+
+39+
