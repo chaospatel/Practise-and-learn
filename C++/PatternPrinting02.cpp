@@ -1,15 +1,16 @@
 #include <iostream>
 using namespace std;
 int main(){
-    int n=2,m=2;
+    int n=5,m=4;
     for (int i=1;i<=n;i++){
          for(int j=1;i<=m;j++){
-            if(i==1 or j==1 or i==n or j==m){
+            if(i==1 || j==1 || i==n || j==m){
                 cout<<'*';
             }
             else{
-                cout<<endl;
+                cout<<" ";
             }
         }
+        cout<<endl;
     }
 }
