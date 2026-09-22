@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main(){
-    int arr1[5]={10,20,30,40,50};
+    int arr1[5]={10,20,35,40,60};
     int index;
     cin>>index;
     int value;

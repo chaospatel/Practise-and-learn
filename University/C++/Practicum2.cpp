@@ -1,80 +1,66 @@
 #include <iostream>
 #include <string>
 using namespace std;
-// --------------------------------------------------
-// 1. Maximum size of the stack
-// --------------------------------------------------
+
 const int MAX = 5;
-// --------------------------------------------------
-// 2. Declare the array-based stack
-// --------------------------------------------------
+
 string historyStack[MAX];
-// Top pointer
 int top = -1;
-// --------------------------------------------------
-// 3. Check whether the stack is full
-// --------------------------------------------------
+
+// Check if stack is full
 bool isFull()
 {
     return top == MAX - 1;
 }
-// --------------------------------------------------
-// 4. Check whether the stack is empty
-// --------------------------------------------------
+
+// Check if stack is empty
 bool isEmpty()
 {
     return top == -1;
 }
-// --------------------------------------------------
-// 5. Return the current size of the stack
-// --------------------------------------------------
+
+// Return stack size
 int size()
 {
     return top + 1;
 }
-// --------------------------------------------------
-// 6. Visit a new page - PUSH operation
-// --------------------------------------------------
+
+// Visit a new page - PUSH
 void visitPage()
 {
     string page;
-    // Check whether stack is full
+
     if (isFull())
     {
-        cout << "\nBrowser history is full! "
-             << "Cannot visit a new page." << endl;
-        return;
-    }
-    // Read page name
-    cout << "\nEnter the page name or URL: ";
-    cin >> page;
-    // Move top to the next position
-    top++;
-    // Insert page at top
-    historyStack[top] = page;
-    cout << "Visited page: " << historyStack[top] << endl;
-}
-//---------------------------------------------------
-// 7. Go Back - POP operation
-// --------------------------------------------------
-void goBack()
-{
-    // Check whether stack is empty
-    if (isEmpty())
-    {
-        cout << "\nBrowser history is empty! "
-             << "Cannot go back." << endl;
+        cout << "\nBrowser history is full!"
+             << "\nCannot visit a new page." << endl;
         return;
     }
 
-    // Display page being removed
+    cout << "\nEnter the page name or URL: ";
+    cin >> page;
+
+    top++;
+    historyStack[top] = page;
+
+    cout << "Visited page: " << historyStack[top] << endl;
+}
+
+// Go back - POP
+void goBack()
+{
+    if (isEmpty())
+    {
+        cout << "\nBrowser history is empty!"
+             << "\nCannot go back." << endl;
+        return;
+    }
+
     cout << "\nGoing back from: "
          << historyStack[top] << endl;
 
-    // Remove the current page logically
     top--;
 
-    // Check whether another page exists
     if (!isEmpty())
     {
         cout << "Current page is now: "
@@ -86,32 +72,23 @@ void goBack()
     }
 }
 
-// --------------------------------------------------
-// 8. Show Current Page - TOP operation
-// --------------------------------------------------
-
+// Show current page - PEEK
 void showCurrentPage()
 {
-    // Check whether stack is empty
     if (isEmpty())
     {
-        cout << "\nNo current page. "
-             << "Browser history is empty." << endl;
+        cout << "\nNo current page."
+             << "\nBrowser history is empty." << endl;
         return;
     }
 
-    // Display the topmost page
     cout << "\nCurrent page: "
          << historyStack[top] << endl;
 }
 
-// --------------------------------------------------
-// 9. Display complete browser history
-// --------------------------------------------------
-
+// Display complete history
 void displayHistory()
 {
-    // Check whether stack is empty
     if (isEmpty())
     {
         cout << "\nBrowser history is empty." << endl;
@@ -121,17 +98,11 @@ void displayHistory()
     cout << "\nBrowser History "
          << "(Current page to oldest page):" << endl;
 
-    // Start from top
     for (int i = top; i >= 0; i--)
     {
-        cout << i << " : "
-             << historyStack[i] << endl;
+        cout << historyStack[i] << endl;
     }
 }
-
-// --------------------------------------------------
-// 10. Main function
-// --------------------------------------------------
 
 int main()
 {
@@ -139,10 +110,6 @@ int main()
 
     do
     {
-        // --------------------------------------------------
-        // Display menu
-        // --------------------------------------------------
-
         cout << "\n====================================" << endl;
         cout << "       BROWSER HISTORY STACK        " << endl;
         cout << "====================================" << endl;
@@ -158,10 +125,6 @@ int main()
 
         cout << "\nEnter your choice: ";
         cin >> choice;
-
-        // --------------------------------------------------
-        // Perform selected operation
-        // --------------------------------------------------
 
         switch (choice)
         {
@@ -188,24 +151,16 @@ int main()
 
             case 6:
                 if (isEmpty())
-                {
                     cout << "\nHistory is EMPTY." << endl;
-                }
                 else
-                {
                     cout << "\nHistory is NOT EMPTY." << endl;
-                }
                 break;
 
             case 7:
                 if (isFull())
-                {
                     cout << "\nHistory is FULL." << endl;
-                }
                 else
-                {
                     cout << "\nHistory is NOT FULL." << endl;
-                }
                 break;
 
             case 8:
@@ -213,8 +168,8 @@ int main()
                 break;
 
             default:
-                cout << "\nInvalid choice! "
-                     << "Please select a valid option." << endl;
+                cout << "\nInvalid choice!"
+                     << "\nPlease select a valid option." << endl;
         }
 
     } while (choice != 8);

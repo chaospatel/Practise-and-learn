@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
-int main(){
-    int m;
-    cin>>m;
-    int n;
-    cin>>n;
-    int arr2[m][n]={};
-    for(int i=0;i<m;i=i+1){
-        for(int j=0;j<n;j=j+1){
-            arr2[i][j]=j+1;
+int main() {
+    int m, n;
+    cin >> m >> n;
+    int arr2[10][10];
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> arr2[i][j];
         }
     }
-    for (int i=0;i<m;i=i+1){
-        for (int j=0;j<n;j=j+1){
-            cout << arr2[i][j]<<" ";
+    cout << "2D Array:" << endl;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << arr2[i][j] << " ";
         }
+        cout << endl;
     }
     return 0;
-} 
+}
